@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Signalist",
-  description: "Track real-time stock prices, get personalised alerts and explore detailed compan",
+  description: "Track real-time stock prices, get personalised alerts and explore detailed company insights.",
 };
 
 export default function RootLayout({
