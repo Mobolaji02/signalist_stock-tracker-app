@@ -1,4 +1,4 @@
-git og'use client';
+'use client';
 import {useEffect, useRef} from 'react';
 
 const useTradingViewWidget = (scriptUrl: string, config: Record<string, unknown>, height = 600) => {
