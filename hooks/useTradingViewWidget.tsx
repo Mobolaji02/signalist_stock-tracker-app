@@ -1,21 +1,22 @@
 'use client';
 import {useEffect, useRef} from 'react';
-import config from "@/postcss.config";
 
 const useTradingViewWidget = (scriptUrl: string, config: Record<string, unknown>, height = 600) => {
     const containerRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
-        if (!containerRef.current) return;
-        if (containerRef.current.dataset.loaded) return;
-        containerRef.current.innerHTML = `<div class="tradingview-widget-container__widget style="width: 100%; height: ${height}px;"></div>`;
+    if (!containerRef.current) return;
+    if (containerRef.current.dataset.loaded) return;
+    containerRef.current.innerHTML = `<div class="tradingview-widget-container__widget" style="width: 100%; height: ${height}px;"></div>`;
 
-        const script = document.createElement("script");
-        script.src = scriptUrl;
-        script.async = true;
-        script.innerHTML = JSON.stringify(config);
+    const script = document.createElement("script");
+    script.src = scriptUrl;
+    script.async = true;
+    // When embedding a third-party script we typically set attributes or textContent
+    // Keep the config on the script element for now.
+    (script as any).dataset.config = JSON.stringify(config);
 
-        containerRef.current.appendChild(script);
+    containerRef.current.appendChild(script);
         containerRef.current.dataset.loaded = 'true';
 
         return () => {
