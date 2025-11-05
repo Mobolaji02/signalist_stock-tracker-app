@@ -1,4 +1,4 @@
-'use client';
+git og'use client';
 import {useEffect, useRef} from 'react';
 import config from "@/postcss.config";
 
