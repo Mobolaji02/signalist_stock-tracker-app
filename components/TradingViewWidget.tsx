@@ -6,9 +6,9 @@ import {cn} from "@/lib/utils";
 
 interface TradingViewWidgetProps {
     title?: string;
-    scriptUrl: sring;
-    config: record<string, unknown>;
-    heigh?: number;
+    scriptUrl: string;
+    config: Record<string, unknown>;
+    height?: number;
     className?: string;
 }
 
