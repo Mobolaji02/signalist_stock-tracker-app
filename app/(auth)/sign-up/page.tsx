@@ -41,7 +41,7 @@ const SignUp = () => {
                 <Inputfield
                     name="full Name"
                     label="Full Name"
-                    placeholder="John Doe"
+                    placeholder="Emmy Don"
                     register={register}
                     error={errors.fullName}
                     validation={ { required: 'Full name is required', minlength: 2 }}
@@ -49,7 +49,7 @@ const SignUp = () => {
                 /> <Inputfield
                     name="email"
                     label="Email"
-                    placeholder="johndoe@gmail.com"
+                    placeholder="emmanueloshuporu@something.com"
                     register={register}
                     error={errors.email}
                     validation={ { required: 'Email name is required', pattern: /^\w+@\w+\.\w+$/, message: 'Email address is required' } }
